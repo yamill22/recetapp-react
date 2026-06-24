@@ -1,5 +1,5 @@
 import { recetas } from "./data/recetas";
-import RecetaCard from "./components/RecetaCard";
+import ListaRecetas from "./components/ListaRecetas";
 
 function App() {
   console.log(recetas);
@@ -8,17 +8,7 @@ function App() {
     <div>
       <h1>RecetApp</h1>
 
-      {recetas.map((receta, index) => (
-        <RecetaCard
-          key={index}
-          nombre={receta.nombre}
-          origen={receta.origen}
-          porciones={receta.porciones}
-          categoria={receta.categoria}
-          descripcion={receta.descripcion}
-          ingredientes={receta.ingredientes}
-        />
-      ))}
+      <ListaRecetas recetas={recetas} />
     </div>
   );
 }
