@@ -14,3 +14,15 @@ Me ayudo a poder estructurar los atributos de las recetas
 
 QUE ATRIBUTOS UTILIZAR PARA LA LISTA DE recetas
 ME AYUDO A ESTRUCTURAR MEJOR EN ORDEN LAS RECETAS
+
+==ETAPA 4==
+
+Mejora el diseño de mi app de recetas en React de forma simple. 
+Quiero:
+tarjetas con borde suave y sombra
+los botones de categoría con estilo moderno
+que el input de búsqueda se vea ordenado
+usar CSS simple (no librerías)
+mantener todo básico y fácil de entender
+
+No cambies la lógica, solo el estilo visual.
