@@ -7,18 +7,18 @@ function RecetaCard({
   categoria,
   descripcion,
   ingredientes,
+  esVegetariana,
 }) {
-  // Colores por categoría
   const obtenerColor = () => {
     switch (categoria) {
       case "Entrada":
-        return "#4CAF50"; // verde
+        return "#4CAF50";
       case "Fondo":
-        return "#2196F3"; // azul
+        return "#2196F3";
       case "Postre":
-        return "#FF9800"; // naranja
+        return "#FF9800";
       default:
-        return "#9E9E9E"; // gris
+        return "#9E9E9E";
     }
   };
 
@@ -28,6 +28,11 @@ function RecetaCard({
     padding: "15px",
     margin: "10px 0",
   };
+
+ 
+  const estiloVegetariano = esVegetariana
+    ? { border: "3px solid green" }
+    : {};
 
   const estiloCategoria = {
     backgroundColor: obtenerColor(),
@@ -39,8 +44,10 @@ function RecetaCard({
   };
 
   return (
-    <div style={estiloCard}>
-      <h2>{nombre}</h2>
+    <div style={{ ...estiloCard, ...estiloVegetariano }}>
+      <h2>
+        {nombre} {esVegetariana && <span style={{ color: "green" }}>🌱 VEG</span>}
+      </h2>
 
       <span style={estiloCategoria}>{categoria}</span>
 
@@ -59,7 +66,7 @@ function RecetaCard({
   );
 }
 
-// ✅ Validación de props
+
 RecetaCard.propTypes = {
   nombre: PropTypes.string,
   origen: PropTypes.string,
@@ -67,9 +74,9 @@ RecetaCard.propTypes = {
   categoria: PropTypes.string,
   descripcion: PropTypes.string,
   ingredientes: PropTypes.arrayOf(PropTypes.string),
+  esVegetariana: PropTypes.bool,
 };
 
-// ✅ Valores por defecto
 RecetaCard.defaultProps = {
   nombre: "Receta sin nombre",
   origen: "Desconocido",
@@ -77,7 +84,7 @@ RecetaCard.defaultProps = {
   categoria: "Sin categoría",
   descripcion: "Sin descripción",
   ingredientes: [],
+  esVegetariana: false,
 };
 
 export default RecetaCard;
-
